@@ -46,6 +46,7 @@ export default function OrderHistoryScreen(props) {
                 </td>
                 <td>
                   <button
+                  style={{color:'white'}}
                     type="button"
                     className="small"
                     onClick={() => {

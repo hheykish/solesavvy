@@ -6,6 +6,7 @@ import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import Rating from '../components/Rating';
 import { PRODUCT_REVIEW_CREATE_RESET } from '../constants/productConstants';
+import './ProductScreen.css';
 
 export default function ProductScreen(props) {
   const navigate = useNavigate();
@@ -60,16 +61,16 @@ export default function ProductScreen(props) {
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
         <div>
-          <Link to="/">Back to result</Link>
-          <div className="row top">
-            <div className="col-2">
+          <Link className='back' to="/">Back</Link>
+          <div className="row top-2">
+            <div className="col-product">
               <img
                 className="large"
                 src={product.image}
                 alt={product.name}
               ></img>
             </div>
-            <div className="col-1">
+            <div className="col-card">
               <ul>
                 <li>
                   <h1>{product.name}</h1>
@@ -80,17 +81,17 @@ export default function ProductScreen(props) {
                     numReviews={product.numReviews}
                   ></Rating>
                 </li>
-                <li>Pirce : ${product.price}</li>
+                <li>Pirce : ₹{product.price}</li>
                 <li>
                   Description:
                   <p>{product.description}</p>
                 </li>
               </ul>
             </div>
-            <div className="col-1">
+            <div className="col-card">
               <div className="card card-body">
                 <ul>
-                  <li>
+                  {/* <li>
                     Seller{' '}
                     <h2>
                       <Link to={`/seller/${product.seller._id}`}>
@@ -101,16 +102,34 @@ export default function ProductScreen(props) {
                       rating={product.seller.seller.rating}
                       numReviews={product.seller.seller.numReviews}
                     ></Rating>
-                  </li>
+                  </li> */}
+                <li>
+  Seller{' '}
+  <h2>
+    {product.seller ? (
+      <Link to={`/seller/${product.seller._id}`}>
+        {product.seller.seller.name}
+      </Link>
+    ) : (
+      'Unknown Seller'
+    )}
+  </h2>
+  <Rating
+    rating={product.seller ? product.seller.seller.rating : 0} // Provide a default value if 'seller' is undefined
+    numReviews={product.seller ? product.seller.seller.numReviews : 0} // Provide a default value if 'seller' is undefined
+  />
+</li>
+
+
                   <li>
-                    <div className="row">
-                      <div>Price</div>
-                      <div className="price">${product.price}</div>
+                    <div className="pscreen-row">
+                      <div className='pscreen-price'>Price</div>
+                      <div className="price">₹{product.price}</div>
                     </div>
                   </li>
                   <li>
-                    <div className="row">
-                      <div>Status</div>
+                    <div className="pscreen-row">
+                      <div  className='pscreen-status'>Status</div>
                       <div>
                         {product.countInStock > 0 ? (
                           <span className="success">In Stock</span>
@@ -123,8 +142,8 @@ export default function ProductScreen(props) {
                   {product.countInStock > 0 && (
                     <>
                       <li>
-                        <div className="row">
-                          <div>Qty</div>
+                        <div className="pscreen-row">
+                          <div  className='pscreen-qty'>Qty</div>
                           <div>
                             <select
                               value={qty}
@@ -142,10 +161,9 @@ export default function ProductScreen(props) {
                         </div>
                       </li>
                       <li>
-                        <button
-                          onClick={addToCartHandler}
-                          className="primary block"
-                        >
+                        <button onClick={addToCartHandler}
+                          className="primary-screen block"
+                        style={{color:'white'}}>
                           Add to Cart
                         </button>
                       </li>
@@ -155,15 +173,15 @@ export default function ProductScreen(props) {
               </div>
             </div>
           </div>
-          <div>
+          <div className='review-div'>
             <h2 id="reviews">Reviews</h2>
             {product.reviews.length === 0 && (
               <MessageBox>There is no review</MessageBox>
             )}
             <ul>
               {product.reviews.map((review) => (
-                <li key={review._id}>
-                  <strong>{review.name}</strong>
+                <li className='review-li' key={review._id}>
+                  <strong className='reviewer'>{review.name}</strong>
                   <Rating rating={review.rating} caption=" "></Rating>
                   <p>{review.createdAt.substring(0, 10)}</p>
                   <p>{review.comment}</p>
@@ -200,7 +218,7 @@ export default function ProductScreen(props) {
                     </div>
                     <div>
                       <label />
-                      <button className="primary" type="submit">
+                      <button className="bt-submit" type="submit" style={{color:'white'}}>
                         Submit
                       </button>
                     </div>

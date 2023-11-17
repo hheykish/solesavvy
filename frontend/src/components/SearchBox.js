@@ -18,7 +18,7 @@ export default function SearchBox() {
           onChange={(e) => setName(e.target.value)}
         ></input>
         <button className="primary" type="submit">
-          <i className="fa fa-search"></i>
+          <i className="material-icons" style={{ fontSize: '25px', color: 'black' }}>search</i>
         </button>
       </div>
     </form>

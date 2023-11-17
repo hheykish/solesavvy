@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import socketIOClient from 'socket.io-client';
+import './ChatBox.css';
 
 const ENDPOINT =
   window.location.host.indexOf('localhost') >= 0
@@ -66,14 +67,14 @@ export default function ChatBox(props) {
     <div className="chatbox">
       {!isOpen ? (
         <button type="button" onClick={supportHandler}>
-          <i className="fa fa-support" />
+          <i class="material-icons" style={{ fontSize: '30px', color: 'white' }}>forum</i>
         </button>
       ) : (
         <div className="card card-body">
           <div className="row">
             <strong>Support </strong>
             <button type="button" onClick={closeHandler}>
-              <i className="fa fa-close" />
+              <i class="material-icons" style={{ fontSize: '28px', color: 'white', marginTop: '0rem' }}>close</i>
             </button>
           </div>
           <ul ref={uiMessagesRef}>
@@ -84,7 +85,7 @@ export default function ChatBox(props) {
             ))}
           </ul>
           <div>
-            <form onSubmit={submitHandler} className="row">
+            <form onSubmit={submitHandler} className="row-send">
               <input
                 value={messageBody}
                 onChange={(e) => setMessageBody(e.target.value)}

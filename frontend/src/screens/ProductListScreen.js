@@ -12,6 +12,7 @@ import {
   PRODUCT_CREATE_RESET,
   PRODUCT_DELETE_RESET,
 } from '../constants/productConstants';
+import './ProductListScreen.css';
 
 export default function ProductListScreen(props) {
   const navigate = useNavigate();
@@ -72,7 +73,7 @@ export default function ProductListScreen(props) {
     <div>
       <div className="row">
         <h1>Products</h1>
-        <button type="button" className="primary" onClick={createHandler}>
+        <button type="button" className="product-create-bt" onClick={createHandler} style={{color:'white'}}>
           Create Product
         </button>
       </div>
@@ -109,6 +110,7 @@ export default function ProductListScreen(props) {
                   <td>{product.brand}</td>
                   <td>
                     <button
+                    style={{color:'white'}}  M 
                       type="button"
                       className="small"
                       onClick={() => navigate(`/product/${product._id}/edit`)}
@@ -119,7 +121,7 @@ export default function ProductListScreen(props) {
                       type="button"
                       className="small"
                       onClick={() => deleteHandler(product)}
-                    >
+                      style={{color:'white'}}>
                       Delete
                     </button>
                   </td>

@@ -8,6 +8,7 @@ import MessageBox from '../components/MessageBox';
 import { PRODUCT_UPDATE_RESET } from '../constants/productConstants';
 
 export default function ProductEditScreen(props) {
+  console.log('ProductEditScreen is rendering');
   const navigate = useNavigate();
   const params = useParams();
   const { id: productId } = params;
@@ -188,7 +189,7 @@ export default function ProductEditScreen(props) {
             </div>
             <div>
               <label></label>
-              <button className="primary" type="submit">
+              <button className="edit-update" type="submit" style={{color:'white'}}>
                 Update
               </button>
             </div>

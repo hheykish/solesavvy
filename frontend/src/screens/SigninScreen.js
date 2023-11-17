@@ -57,7 +57,7 @@ export default function SigninScreen(props) {
         </div>
         <div>
           <label />
-          <button className="primary" type="submit">
+          <button className="sign-bt" type="submit" style={{color:'white'}}>
             Sign In
           </button>
         </div>

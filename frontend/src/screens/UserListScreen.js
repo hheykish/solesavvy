@@ -5,6 +5,7 @@ import { deleteUser, listUsers } from '../actions/userActions';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import { USER_DETAILS_RESET } from '../constants/userConstants';
+import './UserListScreen.css';
 
 export default function UserListScreen(props) {
   const navigate = useNavigate();
@@ -64,6 +65,7 @@ export default function UserListScreen(props) {
                 <td>{user.isAdmin ? 'YES' : 'NO'}</td>
                 <td>
                   <button
+                  style={{color:'white'}}
                     type="button"
                     className="small"
                     onClick={() => navigate(`/user/${user._id}/edit`)}
@@ -74,7 +76,7 @@ export default function UserListScreen(props) {
                     type="button"
                     className="small"
                     onClick={() => deleteHandler(user)}
-                  >
+                   style={{color:'white'}}>
                     Delete
                   </button>
                 </td>

@@ -1,0 +1,38 @@
+
+h2 {
+    font-size: 1.6rem;
+    padding: 1rem;
+    text-align:left;
+    text-transform: uppercase;
+}
+
+.card-p-body {
+    padding: 1rem;
+    margin-top: -3rem;
+    margin-right: 0rem;
+  }
+
+  .card-p {
+    /* border: 0.1rem #c0c0c0 solid; */
+    background-color: #f8f8f8;
+    /* border-radius: 0.5rem; */
+    margin: 1rem;
+    width: 30rem;
+    height: 43rem;
+    /* align-content: baseline; */
+}
+
+.p-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-right: 2rem;
+}
+
+.price {
+    margin-top: -3.9rem;
+}
+
+.rating {
+    padding-top: rem;
+  }

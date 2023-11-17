@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate, useParams, useLocation } from 'react-router-dom';
 import { addToCart, removeFromCart } from '../actions/cartActions';
 import MessageBox from '../components/MessageBox';
+import './CartScreen.css';
 
 export default function CartScreen(props) {
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ export default function CartScreen(props) {
   return (
     <div className="row top">
       <div className="col-2">
-        <h1>Shopping Cart</h1>
+        <h1 id='cart-h1'>Shopping Cart</h1>
         {error && <MessageBox variant="danger">{error}</MessageBox>}
         {cartItems.length === 0 ? (
           <MessageBox>
@@ -43,7 +44,7 @@ export default function CartScreen(props) {
           <ul>
             {cartItems.map((item) => (
               <li key={item.product}>
-                <div className="row">
+                <div className="cart-row">
                   <div>
                     <img
                       src={item.image}
@@ -70,12 +71,12 @@ export default function CartScreen(props) {
                       ))}
                     </select>
                   </div>
-                  <div>${item.price}</div>
+                  <div>₹{item.price}</div>
                   <div>
                     <button
                       type="button"
                       onClick={() => removeFromCartHandler(item.product)}
-                    >
+                      style={{ color: 'white' }}>
                       Delete
                     </button>
                   </div>
@@ -85,12 +86,12 @@ export default function CartScreen(props) {
           </ul>
         )}
       </div>
-      <div className="col-1">
-        <div className="card card-body">
+      <div className="cart-col">
+        <div className="cart-sub">
           <ul>
             <li>
               <h2>
-                Subtotal ({cartItems.reduce((a, c) => a + c.qty, 0)} items) : $
+                Subtotal ({cartItems.reduce((a, c) => a + c.qty, 0)} items) : ₹
                 {cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
               </h2>
             </li>
@@ -98,9 +99,9 @@ export default function CartScreen(props) {
               <button
                 type="button"
                 onClick={checkoutHandler}
-                className="primary block"
+                className="primary-cart block"
                 disabled={cartItems.length === 0}
-              >
+                style={{ color: 'white' }}>
                 Proceed to Checkout
               </button>
             </li>

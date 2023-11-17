@@ -1,0 +1,101 @@
+.pscreen-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    padding-left: 1.3rem;
+}
+
+/* button.block {
+    width: 100%;
+}
+
+button.primary {
+    background-color: #ffffff00;
+    height: 3.2rem;
+    border: #ffffff00;
+    width: 5rem;
+    margin-left: -4rem;
+} */
+
+div > .pscreen-price {
+    padding-right: 3rem;
+}
+
+div > .pscreen-status {
+    padding-right: 2rem;
+}
+
+div > .pscreen-qty {
+    padding-right: 4rem;
+}
+
+primary-screen {
+    background-color: rgba(255, 255, 255, 0);
+    height: 3rem;
+    border: 10px;
+    width: 5rem;
+    margin-left: -4rem;
+    border-color: black;
+}
+
+primary-screen:hover {
+    background-color: #ef233c;
+    height: 3rem;
+    border: 10px;
+    width: 5rem;
+    margin-left: -4rem;
+    border-color: black;
+}
+
+button {
+    margin-top: 1rem;
+}
+
+.rating {
+    padding-top: 1rem;
+}
+
+.review-li {
+    margin-left: 2rem;
+}
+
+.comment {
+    padding: 2rem;
+}
+.col-card {
+
+    flex-wrap:wrap;
+    width: 35rem;
+    margin-top: -20rem;
+    margin-left: -6rem;
+  }
+
+   h1 {
+    margin-left: -2rem;
+   }
+
+ .col-product {
+    flex: 0 0 0rem;
+  }
+
+  .row.top-2 {
+    justify-content: space-around;
+}  
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  h2 {
+    align-items: center;
+  }
+
+  .price {
+    margin-top: 0rem;
+}
+.reviewer {
+    margin-bottom: 2rem;
+}

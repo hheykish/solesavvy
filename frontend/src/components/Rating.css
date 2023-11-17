@@ -1,0 +1,14 @@
+.rating {
+    text-size-adjust: 2rem;
+    margin-top: -1.5rem;
+    margin-bottom: 0.2rem;
+    margin-left: 0.8rem;
+}
+
+.rating span {
+    color: #f0c040;
+    margin: 0.1rem;
+  }
+  .rating span:last-child {
+    color: #404040;
+  }

@@ -1,16 +1,6 @@
-# Amazona ECommerce Website
-![amazona](/template/images/amazona.jpg)
-
-# React & Node Tutorial - Full ECommerce in 9 Hours [2021]
-Welcome to my React and Node tutorial to build a fully-functional e-commerce website exactly like amazon. Open your code editor and follow me for the next hours to build an e-commerce website using MERN stack (MongoDB, ExpressJS, React and Node.JS).
-
-## Demo Website
-
-- 👉 Heroku : [https://react-amazona.herokuapp.com](https://react-amazona.herokuapp.com)
-- 👉 Heroku Mirror: [https://react-amazona-mirror.herokuapp.com](https://react-amazona-mirror.herokuapp.com)
 
 
-## You Will Learn
+## 
 
 - HTML5 and CSS3: Semantic Elements, CSS Grid, Flexbox
 - React: Components, Props, Events, Hooks, Router, Axios
@@ -18,24 +8,15 @@ Welcome to my React and Node tutorial to build a fully-functional e-commerce web
 - Node & Express: Web API, Body Parser, File Upload, JWT
 - MongoDB: Mongoose, Aggregation
 - Development: ESLint, Babel, Git, Github,
-- Deployment: Heroku
 - Watch React & Node Tutorial
 
-## Run Locally
-
-### 1. Clone repo
-
-```
-$ git clone git@github.com:basir/amazona.git
-$ cd amazona
-```
 
 ### 2. Setup MongoDB
 
 - Local MongoDB
   - Install it from [here](https://www.mongodb.com/try/download/community)
   - Create .env file in root folder
-  - Set MONGODB_URL=mongodb://localhost/amazona  
+  - Set MONGODB_URL=mongodb://localhost/solesavvy
 - Atlas Cloud MongoDB
   - Create database at [https://cloud.mongodb.com](https://cloud.mongodb.com)
   - Create .env file in root folder
@@ -62,7 +43,16 @@ $ npm start
 - Run this on chrome: http://localhost:5000/api/users/seed
 - It returns admin email and password
 - Run this on chrome: http://localhost:5000/api/products/seed
-- It creates 6 sample products
+- It creates sample products 
+- or use npm run data:import 
+
+ Sample User Login :
+ mail : user@example.com
+ pass : 1234
+
+ Admin Login :
+ mail : admin@example.com
+ pass : 1234
 
 ### 6. Admin Login
 
@@ -76,16 +66,14 @@ $ npm start
 
 ## Lessons
 
-1. Introduction to this course
-   1. what you will build
-   2. what you will learn
-   3. who are audiences
+1. Introduction
+
 2. Install Tools
    1. Code Editor
    2. Web Browser
    3. VS Code Extension
 3. Website Template
-   1. Create amazona folder
+   1. Create solesavvy folder
    2. create template folder
    3. create index.html
    4. add default HTML code
@@ -321,17 +309,6 @@ $ npm start
 44. Deliver Order
     1. create constant, actions and reducers for deliver order
     2. add order deliver action to order details screen
-45. Publish To Heroku
-    1. Create git repository
-    2. Create heroku account
-    3. install Heroku CLI
-    4. heroku login
-    5. heroku apps:create <yourname>amazona
-    6. Edit package.json for build script
-    10. Create Procfile
-    12. Create mongodb atlas database
-    19. Set database connection in heroku env variables
-    20. Commit and push
 46. List Users
     1. build api for list users
     2. Create UserList Screen

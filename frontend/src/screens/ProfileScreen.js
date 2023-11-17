@@ -154,7 +154,7 @@ export default function ProfileScreen() {
             )}
             <div>
               <label />
-              <button className="primary" type="submit">
+              <button className="update-bt" type="submit" style={{color:'white'}}>
                 Update
               </button>
             </div>

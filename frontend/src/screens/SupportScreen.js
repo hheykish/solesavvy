@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import socketIOClient from 'socket.io-client';
 import { useSelector } from 'react-redux';
 import MessageBox from '../components/MessageBox';
+import './SupportScreen.css';
 
 let allUsers = [];
 let allMessages = [];
@@ -146,7 +147,7 @@ export default function SupportScreen() {
         ) : (
           <div>
             <div className="row">
-              <strong>Chat with {selectedUser.name} </strong>
+              <strong className='chat-h'>Chat with {selectedUser.name} </strong>
             </div>
             <ul ref={uiMessagesRef}>
               {messages.length === 0 && <li>No message.</li>}

@@ -1,0 +1,50 @@
+/* Style for the banner content */
+.banner-content {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff; /* Adjust text color as needed */
+}
+  /* Banner Button */
+  .banner-button {
+    font-style: italic;
+    width: 20rem;
+    display: inline-block;
+    padding: 10px 20px;
+    font-stretch: expanded;
+    font-size: 3rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    background-color: #ffffff; /* You can change the background color */
+    border-radius: 50px;
+    box-shadow: 0px 12px 32px rgba(0, 0, 0, 0.4); /* Darker and larger shadow on hover */
+}
+  
+  .banner-button:hover {
+    background-color: #e5383b; /* Change the background color on hover */
+    box-shadow: 0px 12px 32px rgba(0, 0, 0, 0.4); /* Darker and larger shadow on hover */
+}
+  
+.featured-products-heading {
+  text-align: center;
+  font-size: 12rem; /* Adjust the font size as needed */
+  color: #000000; /* Set the text color */
+  margin: 0rem; /* Add space below the heading */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+price {
+  margin-top: 2rem;
+}
+
+h2 {
+  padding-top: none;
+}
+
+.rating {
+  padding-top: 0rem;
+}

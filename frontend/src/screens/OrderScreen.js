@@ -11,6 +11,8 @@ import {
   ORDER_DELIVER_RESET,
   ORDER_PAY_RESET,
 } from '../constants/orderConstants';
+import './OrderScreen.css';
+
 
 export default function OrderScreen(props) {
   const params = useParams();
@@ -80,14 +82,14 @@ export default function OrderScreen(props) {
     <MessageBox variant="danger">{error}</MessageBox>
   ) : (
     <div>
-      <h1>Order {order._id}</h1>
+      <h1 className='order-id'>Order : {order._id}</h1>
       <div className="row top">
         <div className="col-2">
           <ul>
             <li>
-              <div className="card card-body">
-                <h2>Shippring</h2>
-                <p>
+              <div className="card-ord-screen order-screen">
+                <h2 className='ord-h'>Shipping</h2>
+                <p className='ord-para'>
                   <strong>Name:</strong> {order.shippingAddress.fullName} <br />
                   <strong>Address: </strong> {order.shippingAddress.address},
                   {order.shippingAddress.city},{' '}
@@ -104,10 +106,10 @@ export default function OrderScreen(props) {
               </div>
             </li>
             <li>
-              <div className="card card-body">
-                <h2>Payment</h2>
+              <div className="card-ord-screen order-screen">
+                <h2 className='ord-h'>Payment</h2>
                 <p>
-                  <strong>Method:</strong> {order.paymentMethod}
+                  <strong className='ord-para'>Method:</strong> {order.paymentMethod}
                 </p>
                 {order.isPaid ? (
                   <MessageBox variant="success">
@@ -119,12 +121,12 @@ export default function OrderScreen(props) {
               </div>
             </li>
             <li>
-              <div className="card card-body">
-                <h2>Order Items</h2>
+              <div className="card-ord-screen order-screen">
+                <h2 className='ord-screen-p'>Order Items</h2>
                 <ul>
                   {order.orderItems.map((item) => (
                     <li key={item.product}>
-                      <div className="row">
+                      <div className="row-order-screen">
                         <div>
                           <img
                             src={item.image}
@@ -139,7 +141,7 @@ export default function OrderScreen(props) {
                         </div>
 
                         <div>
-                          {item.qty} x ${item.price} = ${item.qty * item.price}
+                          {item.qty} x ₹{item.price} = ₹{item.qty * item.price}
                         </div>
                       </div>
                     </li>
@@ -149,8 +151,8 @@ export default function OrderScreen(props) {
             </li>
           </ul>
         </div>
-        <div className="col-1">
-          <div className="card card-body">
+        <div className="col-card-2">
+          <div className="card-ord-bt card-2">
             <ul>
               <li>
                 <h2>Order Summary</h2>
@@ -158,19 +160,19 @@ export default function OrderScreen(props) {
               <li>
                 <div className="row">
                   <div>Items</div>
-                  <div>${order.itemsPrice.toFixed(2)}</div>
+                  <div>₹{order.itemsPrice.toFixed(2)}</div>
                 </div>
               </li>
               <li>
                 <div className="row">
                   <div>Shipping</div>
-                  <div>${order.shippingPrice.toFixed(2)}</div>
+                  <div>₹{order.shippingPrice.toFixed(2)}</div>
                 </div>
               </li>
               <li>
                 <div className="row">
                   <div>Tax</div>
-                  <div>${order.taxPrice.toFixed(2)}</div>
+                  <div>₹{order.taxPrice.toFixed(2)}</div>
                 </div>
               </li>
               <li>
@@ -179,7 +181,7 @@ export default function OrderScreen(props) {
                     <strong> Order Total</strong>
                   </div>
                   <div>
-                    <strong>${order.totalPrice.toFixed(2)}</strong>
+                    <strong>₹{order.totalPrice.toFixed(2)}</strong>
                   </div>
                 </div>
               </li>

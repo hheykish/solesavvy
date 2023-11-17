@@ -31,8 +31,14 @@ import MapScreen from './screens/MapScreen';
 import DashboardScreen from './screens/DashboardScreen';
 import SupportScreen from './screens/SupportScreen';
 import ChatBox from './components/ChatBox';
+import './App.css';
+import { ImGithub } from "react-icons/im";
+import { SiLinkedin } from "react-icons/si";
+import { BsTwitter } from "react-icons/bs";
+import { FaEnvelope, FaPhone } from "react-icons/fa"; 
 
 function App() {
+  
   const cart = useSelector((state) => state.cart);
   const [sidebarIsOpen, setSidebarIsOpen] = useState(false);
   const { cartItems } = cart;
@@ -62,17 +68,19 @@ function App() {
               className="open-sidebar"
               onClick={() => setSidebarIsOpen(true)}
             >
-              <i className="fa fa-bars"></i>
+              <i className="fa fa-bars" style={{ fontSize: '20px', color: '#000000' }}></i>
             </button>
             <Link className="brand" to="/">
-              amazona
+              SoleSavvy
             </Link>
+            
           </div>
           <div>
             <SearchBox />
           </div>
           <div>
-            <Link to="/cart">
+            
+            <Link className='bt-cart' to="/cart">
               Cart
               {cartItems.length > 0 && (
                 <span className="badge">{cartItems.length}</span>
@@ -98,7 +106,7 @@ function App() {
                 </ul>
               </div>
             ) : (
-              <Link to="/signin">Sign In</Link>
+              <Link className='h-sign' to="/signin">Sign In</Link>
             )}
             {userInfo && userInfo.isSeller && (
               <div className="dropdown">
@@ -150,7 +158,7 @@ function App() {
                 className="close-sidebar"
                 type="button"
               >
-                <i className="fa fa-close"></i>
+<i className="material-icons i-close" style= {{ fontSize:'20px', color:'red' }}>close</i>
               </button>
             </li>
             {loadingCategories ? (
@@ -183,7 +191,7 @@ function App() {
             ></Route>
             <Route
               path="/product/:id/edit"
-              element={ProductEditScreen}
+              element={<ProductEditScreen />}
               exact
             ></Route>
             <Route path="/signin" element={<SigninScreen />}></Route>
@@ -314,7 +322,25 @@ function App() {
         </main>
         <footer className="row center">
           {userInfo && !userInfo.isAdmin && <ChatBox userInfo={userInfo} />}
-          <div>All right reserved</div>{' '}
+          <div className="footer">
+      <div className="contact-address">
+        <p className='footer-p'><FaEnvelope /> support@solesavvy.com</p>
+        <p className='footer-p'><FaPhone /> Phone : +91 7845561289</p>
+        <p className='footer-p'>123 Sole Street, Sneaker City, SS12345</p>
+      </div>
+      <big>&copy; Made with <span>&hearts;</span> by Dev Akash.</big>
+      <div className="social-links">
+        <Link to="https://twitter.com/" target="_blank">
+          <BsTwitter />
+        </Link>
+        <Link to="https://github.com/" target="_blank">
+          <ImGithub />
+        </Link>
+        <Link to="https://www.linkedin.com/in/" target="_blank">
+          <SiLinkedin />
+        </Link>
+      </div>
+    </div>
         </footer>
       </div>
     </BrowserRouter>

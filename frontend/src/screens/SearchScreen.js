@@ -7,6 +7,7 @@ import MessageBox from '../components/MessageBox';
 import Product from '../components/Product';
 import Rating from '../components/Rating';
 import { prices, ratings } from '../utils';
+import './SearchScreen.css';
 
 export default function SearchScreen(props) {
   const navigate = useNavigate();
@@ -79,7 +80,7 @@ export default function SearchScreen(props) {
         </div>
       </div>
       <div className="row top">
-        <div className="col-1">
+        <div className="col-s-page">
           <h3>Department</h3>
           <div>
             {loadingCategories ? (
@@ -135,7 +136,7 @@ export default function SearchScreen(props) {
                     to={getFilterUrl({ rating: r.rating })}
                     className={`${r.rating}` === `${rating}` ? 'active' : ''}
                   >
-                    <Rating caption={' & up'} rating={r.rating}></Rating>
+                    <Rating caption={'/'} rating={r.rating}></Rating>
                   </Link>
                 </li>
               ))}
@@ -152,12 +153,12 @@ export default function SearchScreen(props) {
               {products.length === 0 && (
                 <MessageBox>No Product Found</MessageBox>
               )}
-              <div className="row center">
+              <div className="row-p-list">
                 {products.map((product) => (
                   <Product key={product._id} product={product}></Product>
                 ))}
               </div>
-              <div className="row center pagination">
+              <div className="row-p-list pagination">
                 {[...Array(pages).keys()].map((x) => (
                   <Link
                     className={x + 1 === page ? 'active' : ''}

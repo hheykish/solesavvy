@@ -1,0 +1,26 @@
+.row-p-list {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap; /* This allows items to wrap onto the next line */
+    justify-content: flex-start; /* You can use flex-start to align items to the start of the container */
+}
+
+/* Style for the active page link */
+.pagination .active {
+    font-weight: bold; /* You can adjust this based on your design preferences */
+}
+
+.col-s-page {
+    flex: 1 1 12rem;
+    margin-top: -3rem;
+    flex-wrap: wrap;
+    margin-right: 4rem;
+    padding-left: 2rem;
+}
+
+.rating {
+    text-size-adjust: 2rem;
+    margin-top: -1.5rem;
+    margin-bottom: 1.5rem;
+    margin-left: 0rem;
+}

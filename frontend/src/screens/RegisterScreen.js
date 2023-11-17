@@ -83,7 +83,7 @@ export default function RegisterScreen(props) {
         </div>
         <div>
           <label />
-          <button className="primary" type="submit">
+          <button className="register-bt" type="submit" style={{color:'white'}}>
             Register
           </button>
         </div>

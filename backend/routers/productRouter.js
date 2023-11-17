@@ -10,7 +10,7 @@ const productRouter = express.Router();
 productRouter.get(
   '/',
   expressAsyncHandler(async (req, res) => {
-    const pageSize = 3;
+    const pageSize = 8;
     const page = Number(req.query.pageNumber) || 1;
     const name = req.query.name || '';
     const category = req.query.category || '';
@@ -109,12 +109,12 @@ productRouter.post(
   isSellerOrAdmin,
   expressAsyncHandler(async (req, res) => {
     const product = new Product({
-      name: 'sample name ' + Date.now(),
+      name: 'SoleSavvy Shoe Exclusive Sample ' + Date.now(),
       seller: req.user._id,
-      image: '/images/p1.jpg',
+      image: '/images/p1.png',
       price: 0,
-      category: 'sample category',
-      brand: 'sample brand',
+      category: 'Sample Test',
+      brand: 'SoleSavvy',
       countInStock: 0,
       rating: 0,
       numReviews: 0,

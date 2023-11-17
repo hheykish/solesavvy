@@ -1,0 +1,72 @@
+.order-id {
+    padding-left: 2rem;
+}
+.order-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    padding-left: 3.5rem;
+    padding-right: 4rem;
+    padding-bottom: 0.5rem;
+}
+
+div > .order-price {
+    padding-right: 3rem;
+}
+
+div > .order-ship {
+    padding-right: 2rem;
+}
+
+div > .order-tax {
+    padding-right: 4rem;
+} 
+
+.order-screen {
+    padding: 1rem;
+    margin-right: 4rem;
+}
+
+.card-ord-screen {
+    width: auto;
+}
+
+.ord-para {
+    padding-left: 1rem;
+}
+
+.ord-h {
+    margin-bottom: -2rem;
+    margin-top: -0.5rem;
+}
+
+.ord-screen-p {
+    margin-bottom: -rem;
+    margin-top: -0.5rem;
+    justify-content: space-between;
+}
+
+.card-2 {
+    padding: 1rem;
+    margin-top: 4.3rem;
+    margin-right: 4rem;
+}
+.card-ord-bt {
+    margin: 1rem;
+    background-color: #f5f3f4;
+}
+
+.col-card-2 {
+    flex: 1 1 12rem;
+    margin-top: -8rem;
+    flex-wrap: wrap;
+    width: 20rem;
+    margin-right: 0.3rem;
+}
+
+.row-order-screen {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }

@@ -49,11 +49,25 @@ export default function MapScreen(props) {
       lng: mapRef.current.center.lng(),
     });
   };
+  // const onPlacesChanged = () => {
+  //   const place = placeRef.current.getPlaces()[0].geometry.location;
+  //   setCenter({ lat: place.lat(), lng: place.lng() });
+  //   setLocation({ lat: place.lat(), lng: place.lng() });
+  // };
   const onPlacesChanged = () => {
-    const place = placeRef.current.getPlaces()[0].geometry.location;
-    setCenter({ lat: place.lat(), lng: place.lng() });
-    setLocation({ lat: place.lat(), lng: place.lng() });
+    const places = placeRef.current.getPlaces();
+  
+    if (places && places.length > 0) {
+      const place = places[0].geometry.location;
+      setCenter({ lat: place.lat(), lng: place.lng() });
+      setLocation({ lat: place.lat(), lng: place.lng() });
+    } else {
+      // Handle the case when no places are returned
+      console.error('No places found.');
+      // You might want to show an error message or handle it differently.
+    }
   };
+  
   const dispatch = useDispatch();
   const onConfirm = () => {
     const places = placeRef.current.getPlaces();
@@ -99,7 +113,7 @@ export default function MapScreen(props) {
       <LoadScript libraries={libs} googleMapsApiKey={googleApiKey}>
         <GoogleMap
           id="smaple-map"
-          mapContainerStyle={{ height: '100%', width: '100%' }}
+          mapContainerStyle={{ paddingTop :'10rem', height: '100%', width: '100%' }}
           center={center}
           zoom={15}
           onLoad={onLoad}
@@ -111,7 +125,7 @@ export default function MapScreen(props) {
           >
             <div className="map-input-box">
               <input type="text" placeholder="Enter your address"></input>
-              <button type="button" className="primary" onClick={onConfirm}>
+              <button type="button" className="map-confirm" onClick={onConfirm} style={{color:'white'}}>
                 Confirm
               </button>
             </div>
@@ -123,4 +137,5 @@ export default function MapScreen(props) {
   ) : (
     <LoadingBox></LoadingBox>
   );
+
 }

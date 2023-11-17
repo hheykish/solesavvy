@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { saveShippingAddress } from '../actions/cartActions';
 import CheckoutSteps from '../components/CheckoutSteps';
+import './ShippingAddressScreen.css';
 
 export default function ShippingAddressScreen(props) {
   const navigate = useNavigate();
@@ -134,13 +135,11 @@ export default function ShippingAddressScreen(props) {
         </div>
         <div>
           <label htmlFor="chooseOnMap">Location</label>
-          <button type="button" onClick={chooseOnMap}>
+          <button className="button-choose" onClick={chooseOnMap} style={{color:'white'}}>
             Choose On Map
           </button>
-        </div>
-        <div>
           <label />
-          <button className="primary" type="submit">
+          <button className="primary-continute" type="submit" style={{color:'white'}}>
             Continue
           </button>
         </div>

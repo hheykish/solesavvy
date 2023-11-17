@@ -54,7 +54,7 @@ export default function PaymentMethodScreen(props) {
         </div>
         <div>
           <label />
-          <button className="primary" type="submit">
+          <button className="primary-continue" type="submit" style={{color:'white'}}>
             Continue
           </button>
         </div>

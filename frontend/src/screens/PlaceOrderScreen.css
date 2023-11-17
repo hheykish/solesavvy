@@ -1,0 +1,49 @@
+.order-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    padding-left: 3.5rem;
+    padding-right: 4rem;
+    padding-bottom: 0.5rem;
+}
+
+div > .order-price {
+    padding-right: 3rem;
+}
+
+div > .order-ship {
+    padding-right: 2rem;
+}
+
+div > .order-tax {
+    padding-right: 4rem;
+}
+
+.card-order {
+    padding: 1rem;
+    margin-top: 4.3rem;
+    margin-right: 4rem;
+}
+
+.card-ord-p {
+    /* border: 0.1rem #c0c0c0 solid; */
+    background-color: #f8f8f8;
+    /* border-radius: 0.5rem; */
+    /* margin: 1rem; */
+    width: auto;
+}
+
+.ord-para {
+    padding-left: 1rem;
+}
+
+.ord-h {
+    margin-bottom: -2rem;
+    margin-top: -0.5rem;
+}
+
+.ord-h-3 {
+    margin-bottom: -rem;
+    margin-top: -0.5rem;
+}
+
