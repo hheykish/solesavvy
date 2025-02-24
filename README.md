@@ -59,10 +59,6 @@ $ npm start
 - Run http://localhost:3000/signin
 - Enter admin email and password and click signin
 
-## Support
-
-- Q/A: https://webacademy.pro/amazona
-- Contact Instructor: [Basir](mailto:basir.jafarzadeh@gmail.com)
 
 ## Lessons
 
